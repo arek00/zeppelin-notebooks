@@ -1,0 +1,491 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark\nval ratings \u003d sqlContext.read.format(\"csv\")\n    .option(\"header\", false)\n    .option(\"delimiter\", \":\")\n    .load(\"/home/arek/materialy/bigdata/ml-1m/ratings.dat\")\n    .select($\"_c0\" as \"userId\", $\"_c2\" as \"movieId\", $\"_c4\" as \"rating\", $\"_c6\" as \"timestamp\")\n\nratings.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 02:29:44.494",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-------+------+---------+\n|userId|movieId|rating|timestamp|\n+------+-------+------+---------+\n|     1|   1193|     5|978300760|\n|     1|    661|     3|978302109|\n|     1|    914|     3|978301968|\n|     1|   3408|     4|978300275|\n|     1|   2355|     5|978824291|\n|     1|   1197|     3|978302268|\n|     1|   1287|     5|978302039|\n|     1|   2804|     5|978300719|\n|     1|    594|     4|978302268|\n|     1|    919|     4|978301368|\n|     1|    595|     5|978824268|\n|     1|    938|     4|978301752|\n|     1|   2398|     4|978302281|\n|     1|   2918|     4|978302124|\n|     1|   1035|     5|978301753|\n|     1|   2791|     4|978302188|\n|     1|   2687|     3|978824268|\n|     1|   2018|     4|978301777|\n|     1|   3105|     5|978301713|\n|     1|   2797|     4|978302039|\n+------+-------+------+---------+\nonly showing top 20 rows\n\nratings: org.apache.spark.sql.DataFrame \u003d [userId: string, movieId: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d42",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d43"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1579026698637_-731294092",
+      "id": "20200114-193138_519445188",
+      "dateCreated": "2020-01-14 19:31:38.637",
+      "dateStarted": "2020-01-16 02:29:44.519",
+      "dateFinished": "2020-01-16 02:29:45.682",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nratings.show(10)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-14 22:17:32.362",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-------+------+---------+\n|userId|movieId|rating|timestamp|\n+------+-------+------+---------+\n|     1|   1193|     5|978300760|\n|     1|    661|     3|978302109|\n|     1|    914|     3|978301968|\n|     1|   3408|     4|978300275|\n|     1|   2355|     5|978824291|\n|     1|   1197|     3|978302268|\n|     1|   1287|     5|978302039|\n|     1|   2804|     5|978300719|\n|     1|    594|     4|978302268|\n|     1|    919|     4|978301368|\n+------+-------+------+---------+\nonly showing top 10 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d41"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1579036646601_1155798726",
+      "id": "20200114-221726_1066666746",
+      "dateCreated": "2020-01-14 22:17:26.601",
+      "dateStarted": "2020-01-14 22:17:32.375",
+      "dateFinished": "2020-01-14 22:17:32.932",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\nls target/tmp/myCollaborativeFilter/data/product\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-14 20:00:25.732",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "part-00000-0f0e7185-7ba8-4500-ba7c-ad69ce8ade2d-c000.snappy.parquet\npart-00001-0f0e7185-7ba8-4500-ba7c-ad69ce8ade2d-c000.snappy.parquet\npart-00002-0f0e7185-7ba8-4500-ba7c-ad69ce8ade2d-c000.snappy.parquet\npart-00003-0f0e7185-7ba8-4500-ba7c-ad69ce8ade2d-c000.snappy.parquet\n_SUCCESS\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579028388615_351025696",
+      "id": "20200114-195948_1476345607",
+      "dateCreated": "2020-01-14 19:59:48.615",
+      "dateStarted": "2020-01-14 20:00:25.743",
+      "dateFinished": "2020-01-14 20:00:25.761",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\nimport org.apache.spark.mllib.recommendation.ALS\nimport org.apache.spark.mllib.recommendation.MatrixFactorizationModel\nimport org.apache.spark.mllib.recommendation.Rating\nimport org.apache.spark.sql.Row\n\n\n// Load and parse the data\n// val data \u003d sc.textFile(\"/home/arek/materialy/bigdata/ml-25m/ratings.csv\")\n// val ratings \u003d data.map(_.split(\u0027,\u0027) match { case Array(user, item, rate, timestamp) \u003d\u003e\n//   Rating(user.toInt, item.toInt, rate.toDouble)\n// })\n\ndef rowToRating(row: Row): Rating \u003d {\n    val userId \u003d Integer.valueOf(row.getAs[String](\"userId\"))\n    val itemId \u003d Integer.valueOf(row.getAs[String](\"movieId\"))\n    val rating \u003d java.lang.Double.valueOf(row.getAs[String](\"rating\"))\n    \n    Rating(userId, itemId, rating)\n}\n\nval ratingsRDD \u003d ratings.rdd\n    .map(rowToRating _)\n\n\n\n// Build the recommendation model using ALS\nval rank \u003d 10\nval numIterations \u003d 10\nval model \u003d ALS.train(ratingsRDD, rank, numIterations, 0.01)\n\n// Evaluate the model on rating data\nval usersProducts \u003d ratingsRDD.map { case Rating(user, product, rate) \u003d\u003e\n  (user, product)\n}\n\nval predictions \u003d\n  model.predict(usersProducts).map { case Rating(user, product, rate) \u003d\u003e\n    ((user, product), rate)\n}\n\nval ratesAndPreds \u003d ratingsRDD.map { case Rating(user, product, rate) \u003d\u003e\n  ((user, product), rate)\n}.join(predictions)\n\nval MSE \u003d ratesAndPreds.map { case ((user, product), (r1, r2)) \u003d\u003e\n  val err \u003d (r1 - r2)\n  err * err\n}.mean()\nprintln(s\"Mean Squared Error \u003d $MSE\")\n\n// Save and load model\nmodel.save(sc, \"target/tmp/myCollaborativeFilter\")\nval sameModel \u003d MatrixFactorizationModel.load(sc, \"target/tmp/myCollaborativeFilter\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 02:29:49.788",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Mean Squared Error \u003d 0.5791895789374274\norg.apache.hadoop.mapred.FileAlreadyExistsException: Output directory file:/home/arek/zeppelin/bin/target/tmp/myCollaborativeFilter/metadata already exists\n  at org.apache.hadoop.mapred.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:131)\n  at org.apache.spark.internal.io.HadoopMapRedWriteConfigUtil.assertConf(SparkHadoopWriter.scala:289)\n  at org.apache.spark.internal.io.SparkHadoopWriter$.write(SparkHadoopWriter.scala:71)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopDataset$1.apply$mcV$sp(PairRDDFunctions.scala:1096)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopDataset$1.apply(PairRDDFunctions.scala:1094)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopDataset$1.apply(PairRDDFunctions.scala:1094)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)\n  at org.apache.spark.rdd.PairRDDFunctions.saveAsHadoopDataset(PairRDDFunctions.scala:1094)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$4.apply$mcV$sp(PairRDDFunctions.scala:1067)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$4.apply(PairRDDFunctions.scala:1032)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$4.apply(PairRDDFunctions.scala:1032)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)\n  at org.apache.spark.rdd.PairRDDFunctions.saveAsHadoopFile(PairRDDFunctions.scala:1032)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$1.apply$mcV$sp(PairRDDFunctions.scala:958)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$1.apply(PairRDDFunctions.scala:958)\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$1.apply(PairRDDFunctions.scala:958)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)\n  at org.apache.spark.rdd.PairRDDFunctions.saveAsHadoopFile(PairRDDFunctions.scala:957)\n  at org.apache.spark.rdd.RDD$$anonfun$saveAsTextFile$1.apply$mcV$sp(RDD.scala:1499)\n  at org.apache.spark.rdd.RDD$$anonfun$saveAsTextFile$1.apply(RDD.scala:1478)\n  at org.apache.spark.rdd.RDD$$anonfun$saveAsTextFile$1.apply(RDD.scala:1478)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)\n  at org.apache.spark.rdd.RDD.saveAsTextFile(RDD.scala:1478)\n  at org.apache.spark.mllib.recommendation.MatrixFactorizationModel$SaveLoadV1_0$.save(MatrixFactorizationModel.scala:378)\n  at org.apache.spark.mllib.recommendation.MatrixFactorizationModel.save(MatrixFactorizationModel.scala:216)\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d44",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d45",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d46",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d47",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d48",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d49",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d50",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d51",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d52",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d53"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1578878653550_1291483170",
+      "id": "20200113-022413_655205849",
+      "dateCreated": "2020-01-13 02:24:13.551",
+      "dateStarted": "2020-01-16 02:29:49.803",
+      "dateFinished": "2020-01-16 02:30:11.526",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nval movies \u003d sqlContext.read.format(\"csv\")\n    .option(\"header\", false)\n    .option(\"delimiter\", \":\")\n    .load(\"/home/arek/materialy/bigdata/ml-1m/movies.dat\")\n    .withColumn(\"title\", when($\"_c3\" isNotNull, concat($\"_c2\", $\"_c3\")).otherwise($\"_c2\"))\n    .select($\"_c0\" as \"movieId\", $\"title\", $\"_c4\" as \"categories\")\n    \n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 02:44:08.517",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one feature warning; re-run with -feature for details\n+-------+--------------------+--------------------+\n|movieId|               title|          categories|\n+-------+--------------------+--------------------+\n|      1|    Toy Story (1995)|Animation|Childre...|\n|      2|      Jumanji (1995)|Adventure|Childre...|\n|      3|Grumpier Old Men ...|      Comedy|Romance|\n|      4|Waiting to Exhale...|        Comedy|Drama|\n|      5|Father of the Bri...|              Comedy|\n|      6|         Heat (1995)|Action|Crime|Thri...|\n|      7|      Sabrina (1995)|      Comedy|Romance|\n|      8| Tom and Huck (1995)|Adventure|Children\u0027s|\n|      9| Sudden Death (1995)|              Action|\n|     10|    GoldenEye (1995)|Action|Adventure|...|\n|     11|American Presiden...|Comedy|Drama|Romance|\n|     12|Dracula Dead and ...|                null|\n|     13|        Balto (1995)|Animation|Children\u0027s|\n|     14|        Nixon (1995)|               Drama|\n|     15|Cutthroat Island ...|Action|Adventure|...|\n|     16|       Casino (1995)|      Drama|Thriller|\n|     17|Sense and Sensibi...|       Drama|Romance|\n|     18|   Four Rooms (1995)|            Thriller|\n|     19|Ace Ventura When ...|                null|\n|     20|  Money Train (1995)|              Action|\n+-------+--------------------+--------------------+\nonly showing top 20 rows\n\nmovies: org.apache.spark.sql.DataFrame \u003d [movieId: string, title: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d61",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d62"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1579138196365_2126525214",
+      "id": "20200116-022956_803869411",
+      "dateCreated": "2020-01-16 02:29:56.365",
+      "dateStarted": "2020-01-16 02:39:31.342",
+      "dateFinished": "2020-01-16 02:39:32.184",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nmovies.show(10)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 02:44:12.955",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+\n|movieId|               title|          categories|\n+-------+--------------------+--------------------+\n|      1|    Toy Story (1995)|Animation|Childre...|\n|      2|      Jumanji (1995)|Adventure|Childre...|\n|      3|Grumpier Old Men ...|      Comedy|Romance|\n|      4|Waiting to Exhale...|        Comedy|Drama|\n|      5|Father of the Bri...|              Comedy|\n|      6|         Heat (1995)|Action|Crime|Thri...|\n|      7|      Sabrina (1995)|      Comedy|Romance|\n|      8| Tom and Huck (1995)|Adventure|Children\u0027s|\n|      9| Sudden Death (1995)|              Action|\n|     10|    GoldenEye (1995)|Action|Adventure|...|\n+-------+--------------------+--------------------+\nonly showing top 10 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d73"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1579139048592_1430511314",
+      "id": "20200116-024408_1115287698",
+      "dateCreated": "2020-01-16 02:44:08.592",
+      "dateStarted": "2020-01-16 02:44:12.979",
+      "dateFinished": "2020-01-16 02:44:13.301",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nval recommended \u003d sameModel.recommendProducts(22, 10).map(rating \u003d\u003e (rating.user, rating.product, rating.rating))\n    .toSeq\n    .toDF(\"userId\", \"movieId\", \"rating\")\n    .join(movies, Seq(\"movieId\"), \"left\")\n    .select(\"title\", \"rating\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 02:55:14.281",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "recommended: org.apache.spark.sql.DataFrame \u003d [title: string, rating: double]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d84",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d85"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1579138473669_-495238266",
+      "id": "20200116-023433_180315065",
+      "dateCreated": "2020-01-16 02:34:33.669",
+      "dateStarted": "2020-01-16 02:55:14.306",
+      "dateFinished": "2020-01-16 02:55:15.115",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nz.show(recommended.select(\"title\", \"rating\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 02:55:44.699",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 388.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "title": "string",
+                      "rating": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "title\trating\nThree Ages, The (1923)\t6.013361156748712\nKilling of Sister George, The (1968)\t5.675328681000989\nActor\u0027s Revenge, An (Yukinojo Henge) (1963)\t5.191057949995908\nDay of the Beast, The (El D�a de la bestia) (1995)\t5.0466570573097\nColdblooded (1995)\t5.039303444367898\nMamma Roma (1962)\t5.028527492368774\nOn the Ropes (1999)\t4.977383992778498\nSaragossa Manuscript, The (Rekopis znaleziony w Saragossie) (1965)\t4.941456577791039\nThose Who Love Me Can Take the Train (Ceux qui m\u0027aiment prendront le train) (1998)\t4.873320077960091\nLast Time I Committed Suicide, The (1997)\t4.860418016759043\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d86",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d87",
+            "http://arek-portege-r30-a.home:4040/jobs/job?id\u003d88"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1579139613526_1449677015",
+      "id": "20200116-025333_1918972727",
+      "dateCreated": "2020-01-16 02:53:33.526",
+      "dateStarted": "2020-01-16 02:55:18.404",
+      "dateFinished": "2020-01-16 02:55:18.989",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nsameModel.predict()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-14 19:39:37.561",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578879122426_-378880986",
+      "id": "20200113-023202_690517827",
+      "dateCreated": "2020-01-13 02:32:02.426",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "recommender/spark",
+  "id": "2EZ6DAW3G",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
